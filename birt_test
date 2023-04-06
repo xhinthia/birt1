@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201806261756</property>
+    <list-property name="includeScripts">
+        <property>_fonctions.js</property>
+    </list-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">FILELIST</property>
+            <property name="id">2330</property>
+            <expression name="value" type="javascript">if (params["local"].value != 1) {&#13;
+	params["baseurl"].value+"/data/impression/liste.php?u="+params["id_user"].value+"&amp;h="+params["lh"].value&#13;
+} else  {&#13;
+	reportContext.getDesignHandle().findDataSource("XML_LISTE").getProperty("FILELIST")&#13;
+}</expression>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">"bdd/config_"+params["s"].value+"_"+params["bdd"].value+".xml"</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="cssStyleSheets">
+        <structure>
+            <property name="fileName">_css.css</property>
+            <property name="useExternalCss">false</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="bdd" id="144">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="baseurl" id="145">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">http://localhost/mmfusion/</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="id_user" id="884">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="s" id="1644">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="local" id="2337">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">0</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lh" id="2338">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">true</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lg" id="2783">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">FR</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="type_code_barre" id="2216">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">code128</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="id_profil" id="3443">
+            <property name="valueType">static</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="BDD" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:3306/mm10_full?useOldAliasMetadataBehavior=true</property>
+            <property name="odaUser">root</property>
+            <property name="OdaConnProfileName">BDD</property>
+            <property name="OdaConnProfileStorePath">bdd_config.xml</property>
+        </oda-data-source>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="XML_LISTE" id="2330">
+            <property name="FILELIST">C:\wamp\www\liste.xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="_client" id="14">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">id_perso</property>
+                    <property name="paramName">id_user</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SOCIETE_DESI1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">SOCIETE_ADRE1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">SOCIETE_ADRE2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">SOCIETE_CODEP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">SOCIETE_VILLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">SOCIETE_PAYS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SOCIETE_TEL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">SOCIETE_FAX</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">BDD</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SOCIETE_DESI1</property>
+                    <property name="nativeName">SOCIETE_DESI1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">SOCIETE_ADRE1</property>
+                    <property name="nativeName">SOCIETE_ADRE1</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">SOCIETE_ADRE2</property>
+                    <property name="nativeName">SOCIETE_ADRE2</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">SOCIETE_CODEP</property>
+                    <property name="nativeName">SOCIETE_CODEP</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">SOCIETE_VILLE</property>
+                    <property name="nativeName">SOCIETE_VILLE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">SOCIETE_PAYS</property>
+                    <property name="nativeName">SOCIETE_PAYS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SOCIETE_TEL</property>
+                    <property name="nativeName">SOCIETE_TEL</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">SOCIETE_FAX</property>
+                    <property name="nativeName">SOCIETE_FAX</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	SOCIETE.DESI1 AS SOCIETE_DESI1,
+	ADR.ADRE1 AS SOCIETE_ADRE1,
+	ADR.ADRE2 AS SOCIETE_ADRE2,
+	ADR.CODEP AS SOCIETE_CODEP,
+	ADR.VILLE AS SOCIETE_VILLE,
+	ADR.PAYS AS SOCIETE_PAYS,
+	ADR.TEL AS SOCIETE_TEL,
+	ADR.FAX AS SOCIETE_FAX
+FROM ADR
+INNER JOIN SOCIETE ON SOCIETE.ID_ADR = ADR.ID_ADR AND SOCIETE.ACTIF = 1
+INNER JOIN PERSO ON PERSO.ID_SOCIETE = SOCIETE.ID_SOCIETE AND PERSO.ACTIF = 1
+WHERE PERSO.ID_PERSO = ?
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DESI1</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DESI1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DESI1</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ADRE1</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ADRE1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ADRE1</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="_liste" id="2331">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">XML_LISTE</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/liste/id]#:#{id;INT;}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="_nombre_decimales" id="2360">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">NB_DEC_MONETAIRES</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">NB_DEC_MONETAIRES</text-property>
+                    <text-property name="heading">NB_DEC_MONETAIRES</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NB_DEC_QTE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">NB_DEC_QTE</text-property>
+                    <text-property name="heading">NB_DEC_QTE</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">NB_DEC_MONETAIRES</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NB_DEC_QTE</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">BDD</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">NB_DEC_MONETAIRES</property>
+                    <property name="nativeName">NB_DEC_MONETAIRES</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NB_DEC_QTE</property>
+                    <property name="nativeName">NB_DEC_QTE</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+(
+	SELECT VAL_NUM
+	FROM PARAM
+	WHERE PARAM.PARAM = 'NB_DEC_MONETAIRES'
+) NB_DEC_MONETAIRES,
+(
+	SELECT VAL_NUM
+	FROM PARAM
+	WHERE PARAM.PARAM = 'NB_DEC_QTE'
+) NB_DEC_QTE
+FROM ITMCLI]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NB_DEC_MONETAIRES</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NB_DEC_MONETAIRES</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NB_DEC_MONETAIRES</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NB_DEC_QTE</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NB_DEC_QTE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NB_DEC_QTE</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="_traductions" id="2777">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints"/>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">EDITE_LE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">PAGE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">LA_DATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">A</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">HEURE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">DATE_CREATION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">DESIGNATION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">PRINCIPAL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">OBSERVATIONS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">FICHIER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">DATE_PEREMPTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">DATE_APPLICATION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">LANGUE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">VERSION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">FRANCAIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">ANGLAIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">POLONAIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">ESPAGNOL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">NEERLANDAIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">ALLEMAND</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">PORTUGAIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">ITALIEN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">SUEDOIS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">LISTE_DES_DOCUMENTS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[// On copie la requête
+var query = this.queryText;
+
+// On recherche la langue souhaitée, l'id du profil et l'id du perso
+var langue = params["lg"].value;
+var perso_id = parseInt(params["id_user"].value);
+var profil_id = parseInt(params["id_profil"].value);
+
+if (!langue) 
+	langue = "FR";
+	
+if (!perso_id) 
+	perso_id = 1;
+
+if (!profil_id) 
+	profil_id = 1;
+
+langue = "LANG_" + langue;
+perso_id = "" + perso_id;
+profil_id = "" + profil_id;
+
+// On remplace tous les LANGUE_UTILISATEUR par la langue souhaitée
+query = query.replace("LANGUE_UTILISATEUR", langue);
+
+// On remplace tous les PERSO_ID par l'utilisateur
+query = query.replace("PERSO_ID", perso_id);
+
+// On remplace tous les PROFIL_ID par le profil de l'utilisateur
+query = query.replace("PROFIL_ID", profil_id);
+
+// On affecte la requête
+this.queryText = query;
+]]></method>
+            <property name="dataSource">BDD</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">EDITE_LE</property>
+                    <property name="nativeName">EDITE_LE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">PAGE</property>
+                    <property name="nativeName">PAGE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">LA_DATE</property>
+                    <property name="nativeName">LA_DATE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">A</property>
+                    <property name="nativeName">A</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">HEURE</property>
+                    <property name="nativeName">HEURE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">DATE_CREATION</property>
+                    <property name="nativeName">DATE_CREATION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CODE</property>
+                    <property name="nativeName">CODE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">DESIGNATION</property>
+                    <property name="nativeName">DESIGNATION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">PRINCIPAL</property>
+                    <property name="nativeName">PRINCIPAL</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">OBSERVATIONS</property>
+                    <property name="nativeName">OBSERVATIONS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">FICHIER</property>
+                    <property name="nativeName">FICHIER</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">DATE_PEREMPTION</property>
+                    <property name="nativeName">DATE_PEREMPTION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">DATE_APPLICATION</property>
+                    <property name="nativeName">DATE_APPLICATION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">LANGUE</property>
+                    <property name="nativeName">LANGUE</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">VERSION</property>
+                    <property name="nativeName">VERSION</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">FRANCAIS</property>
+                    <property name="nativeName">FRANCAIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">ANGLAIS</property>
+                    <property name="nativeName">ANGLAIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">POLONAIS</property>
+                    <property name="nativeName">POLONAIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">ESPAGNOL</property>
+                    <property name="nativeName">ESPAGNOL</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">NEERLANDAIS</property>
+                    <property name="nativeName">NEERLANDAIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">ALLEMAND</property>
+                    <property name="nativeName">ALLEMAND</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">PORTUGAIS</property>
+                    <property name="nativeName">PORTUGAIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">ITALIEN</property>
+                    <property name="nativeName">ITALIEN</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">SUEDOIS</property>
+                    <property name="nativeName">SUEDOIS</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">LISTE_DES_DOCUMENTS</property>
+                    <property name="nativeName">LISTE_DES_DOCUMENTS</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'EDITE_LE'
+	) EDITE_LE,
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'PAGE'
+	) PAGE,	
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'DATE'
+	) LA_DATE,	
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'A'
+	) A,	
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'HEURE'
+	) HEURE,	
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'DATE_CREATION3102'
+	) DATE_CREATION,				
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'CODE223'
+	) CODE,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'DESIGNATION'
+	) DESIGNATION,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'PRINCIPAL'
+	) PRINCIPAL,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'OBSERVATIONS1786'
+	) OBSERVATIONS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'FICHIER'
+	) FICHIER,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'DATE_PEREMPTION'
+	) DATE_PEREMPTION,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'DATE_APPLICATION'
+	) DATE_APPLICATION,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'LANGUE'
+	) LANGUE,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'VERSION'
+	) VERSION,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'FRANCAIS'
+	) FRANCAIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'ANGLAIS'
+	) ANGLAIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'POLONAIS'
+	) POLONAIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'ESPAGNOL'
+	) ESPAGNOL,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'NEERLANDAIS'
+	) NEERLANDAIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'ALLEMAND'
+	) ALLEMAND,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'PORTUGAIS'
+	) PORTUGAIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'ITALIEN'
+	) ITALIEN,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'SUEDOIS'
+	) SUEDOIS,		
+	(
+		SELECT CASE WHEN I18N_PROFIL.LANGUE_UTILISATEUR IS NULL OR I18N_PROFIL.LANGUE_UTILISATEUR = '' THEN I18N.LANGUE_UTILISATEUR ELSE I18N_PROFIL.LANGUE_UTILISATEUR END
+		FROM I18N 
+		LEFT OUTER JOIN I18N_PROFIL ON I18N_PROFIL.I18N = I18N.I18N AND I18N_PROFIL.ACTIF = 1 AND I18N_PROFIL.ID_PROFIL = PROFIL_ID 
+    	LEFT OUTER JOIN PERSO ON PERSO.ID_PROFIL = I18N_PROFIL.ID_PROFIL AND PERSO.ID_PERSO = PERSO_ID
+		WHERE I18N.I18N = 'LISTE_DES_DOCUMENTS'
+	) LISTE_DES_DOCUMENTS
+FROM ITMCLI
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RAPPORT_INTERVENTION</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RAPPORT_INTERVENTION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RAPPORT_INTERVENTION</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CODE</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CODE</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="01 - Données" id="3444">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">DOCUMENT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DOCUMENT</text-property>
+                    <text-property name="heading">DOCUMENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DESI1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DESI1</text-property>
+                    <text-property name="heading">DESI1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VERSION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">VERSION</text-property>
+                    <text-property name="heading">VERSION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LANGUE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LANGUE</text-property>
+                    <text-property name="heading">LANGUE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATE_APPLICATION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATE_APPLICATION</text-property>
+                    <text-property name="heading">DATE_APPLICATION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATE_PEREMPTION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATE_PEREMPTION</text-property>
+                    <text-property name="heading">DATE_PEREMPTION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FICHIER_NOM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FICHIER_NOM</text-property>
+                    <text-property name="heading">FICHIER_NOM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FICHIER_EXTENSION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FICHIER_EXTENSION</text-property>
+                    <text-property name="heading">FICHIER_EXTENSION</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">concat_id_document</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">-1</property>
+                    <property name="position">1</property>
+                    <expression name="defaultValue" type="javascript">0</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">DOCUMENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DESI1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">VERSION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">LANGUE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">DATE_APPLICATION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">DATE_PEREMPTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">FICHIER_NOM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">FICHIER_EXTENSION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">BDD</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">DOCUMENT</property>
+                    <property name="nativeName">DOCUMENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DESI1</property>
+                    <property name="nativeName">DESI1</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">VERSION</property>
+                    <property name="nativeName">VERSION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">LANGUE</property>
+                    <property name="nativeName">LANGUE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">DATE_APPLICATION</property>
+                    <property name="nativeName">DATE_APPLICATION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">DATE_PEREMPTION</property>
+                    <property name="nativeName">DATE_PEREMPTION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">FICHIER_NOM</property>
+                    <property name="nativeName">FICHIER_NOM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">FICHIER_EXTENSION</property>
+                    <property name="nativeName">FICHIER_EXTENSION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	DOCUMENT.DOCUMENT,
+	DOCUMENT.DESI1,
+	DV.VERSION,
+	DOCUMENT.LANGUE,
+	DOCUMENT.DATE_APPLICATION,
+	DOCUMENT.DATE_PEREMPTION,
+	DV.FICHIER_NOM,
+	DV.FICHIER_EXTENSION
+FROM DOCUMENT
+LEFT OUTER JOIN DOCUMENT_VERSION DV ON DV.ID_DOCUMENT = DOCUMENT.ID_DOCUMENT AND DV.ACTIF = 1
+WHERE DOCUMENT.ID_DOCUMENT IN (?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DOCUMENT</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DOCUMENT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DOCUMENT</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DESI1</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DESI1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DESI1</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>VERSION</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>VERSION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>VERSION</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LANGUE</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LANGUE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LANGUE</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATE_APPLICATION</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATE_APPLICATION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATE_APPLICATION</design:label>
+            <design:formattingHints>
+              <design:displaySize>8</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATE_PEREMPTION</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATE_PEREMPTION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATE_PEREMPTION</design:label>
+            <design:formattingHints>
+              <design:displaySize>8</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FICHIER_NOM</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>255</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FICHIER_NOM</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FICHIER_NOM</design:label>
+            <design:formattingHints>
+              <design:displaySize>255</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FICHIER_EXTENSION</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FICHIER_EXTENSION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FICHIER_EXTENSION</design:label>
+            <design:formattingHints>
+              <design:displaySize>32</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="borderBottomColor">#FFFFFF</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#FFFFFF</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#FFFFFF</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#FFFFFF</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="headerHeight">1.05in</property>
+            <property name="footerHeight">0.22in</property>
+            <page-header>
+                <grid id="2705">
+                    <column id="2706">
+                        <property name="width">1.1in</property>
+                    </column>
+                    <column id="2707">
+                        <property name="width">3in</property>
+                    </column>
+                    <column id="2708"/>
+                    <row id="2709">
+                        <property name="style">border-bottom-primaire</property>
+                        <cell id="2710">
+                            <property name="paddingBottom">5pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="verticalAlign">middle</property>
+                            <image id="147">
+                                <property name="marginTop">auto</property>
+                                <property name="marginLeft">10px</property>
+                                <property name="source">url</property>
+                                <expression name="uri" type="javascript">url = params["baseurl"].value+"/resources/img/logo.php?bdd="+params["bdd"].value+"&amp;size=80x80"</expression>
+                            </image>
+                        </cell>
+                        <cell id="2711">
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingLeft">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <property name="paddingRight">0pt</property>
+                            <grid name="client" id="2851">
+                                <property name="style">color-primaire</property>
+                                <property name="dataSet">_client</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">SOCIETE_DESI1</property>
+                                        <text-property name="displayName">SOCIETE_DESI1</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_DESI1"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_ADRE1</property>
+                                        <text-property name="displayName">SOCIETE_ADRE1</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_ADRE1"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_ADRE2</property>
+                                        <text-property name="displayName">SOCIETE_ADRE2</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_ADRE2"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_CODEP</property>
+                                        <text-property name="displayName">SOCIETE_CODEP</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_CODEP"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_VILLE</property>
+                                        <text-property name="displayName">SOCIETE_VILLE</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_VILLE"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_PAYS</property>
+                                        <text-property name="displayName">SOCIETE_PAYS</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_PAYS"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_TEL</property>
+                                        <text-property name="displayName">SOCIETE_TEL</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_TEL"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">SOCIETE_FAX</property>
+                                        <text-property name="displayName">SOCIETE_FAX</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["SOCIETE_FAX"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <column id="2852"/>
+                                <row id="3050">
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">all</property>
+                                            <expression name="valueExpr" type="javascript">row["SOCIETE_ADRE2"] != ''</expression>
+                                        </structure>
+                                    </list-property>
+                                    <cell id="3051">
+                                        <text-data id="3052">
+                                            <property name="fontSize">3pt</property>
+                                            <expression name="valueExpr">"&amp;nbsp;"</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                </row>
+                                <row id="2853">
+                                    <cell id="2854">
+                                        <text-data id="2868">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="marginBottom">8pt</property>
+                                            <expression name="valueExpr">row["SOCIETE_DESI1"]</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                </row>
+                                <row id="2855">
+                                    <cell id="2856">
+                                        <text-data id="2869">
+                                            <property name="fontSize">9pt</property>
+                                            <expression name="valueExpr">row["SOCIETE_ADRE1"]</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                </row>
+                                <row id="2857">
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">all</property>
+                                            <expression name="valueExpr" type="javascript">!row["SOCIETE_ADRE2"]</expression>
+                                        </structure>
+                                    </list-property>
+                                    <cell id="2858">
+                                        <text-data id="2870">
+                                            <property name="fontSize">9pt</property>
+                                            <expression name="valueExpr">row["SOCIETE_ADRE2"]</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                </row>
+                                <row id="2859">
+                                    <cell id="2860">
+                                        <text-data id="2871">
+                                            <property name="fontSize">9pt</property>
+                                            <expression name="valueExpr">row["SOCIETE_CODEP"] + " " + row["SOCIETE_VILLE"]</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="2712">
+                            <property name="textAlign">right</property>
+                            <property name="verticalAlign">middle</property>
+                            <text-data name="traductions (titre)" id="2767">
+                                <property name="style">color-primaire</property>
+                                <property name="fontSize">16pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="marginTop">2pt</property>
+                                <property name="marginBottom">3pt</property>
+                                <property name="textAlign">right</property>
+                                <property name="dataSet">_traductions</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">LISTE_DES_DOCUMENTS</property>
+                                        <text-property name="displayName">LISTE_DES_DOCUMENTS</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["LISTE_DES_DOCUMENTS"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <expression name="valueExpr">ucfirst(row["LISTE_DES_DOCUMENTS"])</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="traductions (pied_page)" id="2784">
+                    <property name="fontSize">8pt</property>
+                    <property name="dataSet">_traductions</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">EDITE_LE</property>
+                            <text-property name="displayName">EDITE_LE</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["EDITE_LE"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">PAGE</property>
+                            <text-property name="displayName">PAGE</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["PAGE"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                    </list-property>
+                    <column id="2785">
+                        <property name="width">2.5in</property>
+                    </column>
+                    <column id="2786"/>
+                    <column id="2787">
+                        <property name="width">2.5in</property>
+                    </column>
+                    <row id="2792">
+                        <property name="borderTopColor">#808080</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <cell id="2793">
+                            <text-data id="2837">
+                                <property name="color">gray</property>
+                                <property name="marginTop">3pt</property>
+                                <expression name="valueExpr">"www.mistermaintfusion.com"</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="2794">
+                            <text-data id="2835">
+                                <property name="color">gray</property>
+                                <property name="marginTop">3pt</property>
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">ucfirst(row["EDITE_LE"]) + " " + formatDateDeveloppee(new Date(), params["lg"].value, true);</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="2795">
+                            <property name="paddingTop">0pt</property>
+                            <property name="paddingLeft">0pt</property>
+                            <property name="paddingBottom">0pt</property>
+                            <property name="paddingRight">0pt</property>
+                            <grid id="3404">
+                                <property name="color">gray</property>
+                                <property name="marginTop">3pt</property>
+                                <column id="3442"/>
+                                <column id="3439"/>
+                                <column id="3405">
+                                    <property name="width">0.25in</property>
+                                </column>
+                                <column id="3406">
+                                    <property name="width">10px</property>
+                                </column>
+                                <column id="3407">
+                                    <property name="width">0.25in</property>
+                                </column>
+                                <row id="3408">
+                                    <cell id="3441"/>
+                                    <cell id="3438">
+                                        <text-data id="3440">
+                                            <property name="textAlign">right</property>
+                                            <expression name="valueExpr">ucfirst(row["PAGE"])</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
+                                    </cell>
+                                    <cell id="3409">
+                                        <auto-text id="3410">
+                                            <property name="textAlign">right</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="3411">
+                                        <text id="3412">
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[/]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="3413">
+                                        <auto-text id="3414">
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid name="traductions" id="2773">
+            <property name="dataSet">_traductions</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">EDITE_LE</property>
+                    <text-property name="displayName">EDITE_LE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EDITE_LE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PAGE</property>
+                    <text-property name="displayName">PAGE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PAGE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LA_DATE</property>
+                    <text-property name="displayName">LA_DATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LA_DATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">A</property>
+                    <text-property name="displayName">A</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["A"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">HEURE</property>
+                    <text-property name="displayName">HEURE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["HEURE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATE_CREATION</property>
+                    <text-property name="displayName">DATE_CREATION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATE_CREATION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CODE</property>
+                    <text-property name="displayName">CODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DESIGNATION</property>
+                    <text-property name="displayName">DESIGNATION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DESIGNATION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PRINCIPAL</property>
+                    <text-property name="displayName">PRINCIPAL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PRINCIPAL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OBSERVATIONS</property>
+                    <text-property name="displayName">OBSERVATIONS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OBSERVATIONS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FICHIER</property>
+                    <text-property name="displayName">FICHIER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FICHIER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATE_PEREMPTION</property>
+                    <text-property name="displayName">DATE_PEREMPTION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATE_PEREMPTION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATE_APPLICATION</property>
+                    <text-property name="displayName">DATE_APPLICATION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATE_APPLICATION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LANGUE</property>
+                    <text-property name="displayName">LANGUE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LANGUE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">VERSION</property>
+                    <text-property name="displayName">VERSION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["VERSION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FRANCAIS</property>
+                    <text-property name="displayName">FRANCAIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FRANCAIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ANGLAIS</property>
+                    <text-property name="displayName">ANGLAIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ANGLAIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">POLONAIS</property>
+                    <text-property name="displayName">POLONAIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["POLONAIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ESPAGNOL</property>
+                    <text-property name="displayName">ESPAGNOL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ESPAGNOL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NEERLANDAIS</property>
+                    <text-property name="displayName">NEERLANDAIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NEERLANDAIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ALLEMAND</property>
+                    <text-property name="displayName">ALLEMAND</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ALLEMAND"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PORTUGAIS</property>
+                    <text-property name="displayName">PORTUGAIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PORTUGAIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ITALIEN</property>
+                    <text-property name="displayName">ITALIEN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ITALIEN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SUEDOIS</property>
+                    <text-property name="displayName">SUEDOIS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SUEDOIS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LISTE_DES_DOCUMENTS</property>
+                    <text-property name="displayName">LISTE_DES_DOCUMENTS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LISTE_DES_DOCUMENTS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="2774"/>
+            <row id="2775">
+                <cell id="2776">
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <grid name="nombre_decimales" id="2596">
+                        <property name="dataSet">_nombre_decimales</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">NB_DEC_MONETAIRES</property>
+                                <text-property name="displayName">NB_DEC_MONETAIRES</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NB_DEC_MONETAIRES"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NB_DEC_QTE</property>
+                                <text-property name="displayName">NB_DEC_QTE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NB_DEC_QTE"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <column id="2597"/>
+                        <row id="2598">
+                            <cell id="2599">
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingLeft">0pt</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="paddingRight">0pt</property>
+                                <list name="id" id="2240">
+                                    <property name="pageBreakAfter">auto</property>
+                                    <property name="pageBreakBefore">always</property>
+                                    <property name="dataSet">_liste</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">id</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Aggregation</property>
+                                            <property name="dataType">string</property>
+                                            <property name="aggregateFunction">CONCATENATE</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["id"]</expression>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">Separator</property>
+                                                    <expression name="value" type="javascript">","</expression>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">Maxlength</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">Showallvalues</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <footer>
+                                        <list id="3575">
+                                            <property name="dataSet">01 - Données</property>
+                                            <list-property name="paramBindings">
+                                                <structure>
+                                                    <property name="paramName">concat_id_document</property>
+                                                    <simple-property-list name="expression">
+                                                        <value type="javascript">row["Aggregation"];</value>
+                                                    </simple-property-list>
+                                                </structure>
+                                            </list-property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">DOCUMENT</property>
+                                                    <text-property name="displayName">DOCUMENT</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["DOCUMENT"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">DESI1</property>
+                                                    <text-property name="displayName">DESI1</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["DESI1"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">VERSION</property>
+                                                    <text-property name="displayName">VERSION</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["VERSION"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">LANGUE</property>
+                                                    <text-property name="displayName">LANGUE</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["LANGUE"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">DATE_APPLICATION</property>
+                                                    <text-property name="displayName">DATE_APPLICATION</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["DATE_APPLICATION"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">DATE_PEREMPTION</property>
+                                                    <text-property name="displayName">DATE_PEREMPTION</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["DATE_PEREMPTION"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">FICHIER_NOM</property>
+                                                    <text-property name="displayName">FICHIER_NOM</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["FICHIER_NOM"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                                <structure>
+                                                    <property name="name">FICHIER_EXTENSION</property>
+                                                    <text-property name="displayName">FICHIER_EXTENSION</text-property>
+                                                    <expression name="expression" type="javascript">dataSetRow["FICHIER_EXTENSION"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <detail>
+                                                <text-data id="3577">
+                                                    <expression name="valueExpr">row["DOCUMENT"]</expression>
+                                                    <property name="contentType">html</property>
+                                                </text-data>
+                                            </detail>
+                                        </list>
+                                    </footer>
+                                </list>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>
